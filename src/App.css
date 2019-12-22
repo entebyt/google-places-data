@@ -78,12 +78,28 @@
 .App-link {
   color: #61dafb;
 }
+@media screen and (max-width: 640px) {
+  .w-100 {
+    width: 100%;
+  }
+}
+.add-comment-container {
+  background-color: #fafafa;
+}
 .places-list-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
   margin: 20px 0px;
   border: 1px solid #eeee;
   border-radius: 3px;
   padding: 10px;
 }
+.flex-column {
+  flex-direction: column;
+}
+
 .places-data-container {
   margin-right: 20px;
   border: 1px solid #eeee;

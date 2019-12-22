@@ -41,7 +41,7 @@ class GetPlaces extends React.Component<
     const { lat, long, radius, types, nextPageToken, gymData } = this.state;
     this.setState({ loading: true });
     debugger;
-    const queryStringUrl = `https://heat-admin-server.herokuapp.com/placeList?lat=${values &&
+    const queryStringUrl = `http://localhost:4000/placeList?lat=${values &&
       values.lat}&long=${values && values.long}&radius=${values &&
       values.radius}&types=${values && values.types}`;
     const localhosturl = nextPageToken
