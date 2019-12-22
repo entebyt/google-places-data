@@ -25,7 +25,6 @@ class GetPlaces extends React.Component<
     const values = queryString.parse(this.props.location.search);
 
     if (!(Object.keys(values).length === 0)) {
-      debugger;
       this.setState({ lat: "bitch", long: "glitch" });
       this.setState({
         lat: values.lat,
@@ -33,14 +32,14 @@ class GetPlaces extends React.Component<
         radius: values.radius,
         types: values.types
       });
-      debugger;
+
       this.getPlaces(values);
     }
   };
   getPlaces = async (values?: queryString.ParsedQuery<string>) => {
     const { lat, long, radius, types, nextPageToken, gymData } = this.state;
     this.setState({ loading: true });
-    debugger;
+
     const queryStringUrl = `http://localhost:4000/placeList?lat=${values &&
       values.lat}&long=${values && values.long}&radius=${values &&
       values.radius}&types=${values && values.types}`;
@@ -54,7 +53,7 @@ class GetPlaces extends React.Component<
       const data = await (await fetch(
         values ? queryStringUrl : localhosturl
       )).json();
-      debugger;
+
       this.setState({
         gymData: [...gymData, ...data.results],
         errorMessage: data.error_message && data.error_message,

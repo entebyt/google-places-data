@@ -31,10 +31,10 @@ class GymGymPlacesList extends React.Component<
   };
   componentDidMount = async () => {
     this.setState({ loading: true });
-    debugger;
+
     const url = "https://heat-admin-server.herokuapp.com/gymPlaceList";
     const gymList = await (await fetch(url)).json();
-    debugger;
+
     this.setState({ gymList, loading: false });
   };
 
